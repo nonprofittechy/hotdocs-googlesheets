@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<script>
+// Prevent forms from submitting.
+      function preventFormSubmit() {
+        var forms = document.querySelectorAll('form');
+        for (var i = 0; i < forms.length; i++) {
+          forms[i].addEventListener('submit', function(event) {
+            event.preventDefault();
+          });
+        }
+      }
+      
+      window.addEventListener('load', preventFormSubmit);
+      
+      function handleFormSubmit(formObject) {
+        google.script.run.withSuccessHandler(updateComputation).processForm(formObject);
+      }
+      
+      function updateComputation(computation) {
+        var div = document.getElementById('output');
+        div.innerHTML = computation;
+      }
+
+    </script>
+</head>
+<body>
+<form id="myForm" onsubmit="handleFormSubmit(this)">
+Starting array value 
+  <input type="text" name="startVal"><br/>
+  <input type="submit" value="Generate Computation"/>
+</form>
+<div id="output">
+  computation here
+</div>
+</body>
+</html>
