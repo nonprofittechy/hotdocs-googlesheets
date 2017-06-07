@@ -1,0 +1,4 @@
+"Attorney Name","Office Name","Email Address","Street Address","City State and Zip","BBO Number","Fax Number","Phone Number"
+«REPEAT DB Attorney list DI»
+"«DB Attorney name TE»","«DB Attorney office TE»","«DB Attorney E-Mail Add»","«DB Attorney address TE»","«DB Attorney bbo number TE»","«DB Attorney city state zip TE»","«DB Attorney fax TE»","«DB Attorney telephone TE»"
+«END REPEAT»
