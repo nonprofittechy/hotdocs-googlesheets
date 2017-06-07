@@ -1,0 +1,49 @@
+// The  computation below should be placed in the computation "INTERVIEW Authors CO"
+//INTERVIEW Authors CO
+CLEAR Tenants attorney MC
+«REPEAT DB Attorney list DI»
+	ADD "«DB Attorney name TE»" TO Tenants attorney MC
+	SET DB Attorney name TE[«COUNTER»] TO "«DB Attorney name TE»"
+	SET DB Attorney office TE[«COUNTER»] TO "«DB Attorney office TE»"
+	SET DB Attorney E-Mail Add[«COUNTER»] TO "«DB Attorney E-Mail Add»"
+	SET DB Attorney office TE[«COUNTER»] TO "«DB Attorney office TE»"
+	SET DB Attorney address TE[«COUNTER»] TO "«DB Attorney address TE»"
+	SET DB Attorney bbo number TE[«COUNTER»] TO "«DB Attorney bbo number TE»"
+	SET DB Attorney city state zip TE[«COUNTER»] TO "«DB Attorney city state zip TE»"
+	SET DB Attorney fax TE[«COUNTER»] TO "«DB Attorney fax TE»"
+	SET DB Attorney telephone TE[«COUNTER»] TO  "«DB Attorney telephone TE»"
+«END REPEAT»
+// END INTERVIEW Authors CO
+//////////////////////////////////////////////////////////
+
+// The  computation below should be placed in the computation "INTERVIEW Courts CO"
+// INTERVIEW Courts CO
+CLEAR Court MC
+«REPEAT DB Court list DI»
+	ADD "«Court title CO»" TO Court MC
+	SET DB Court department MC[«COUNTER»] TO "«DB Court department MC»"
+	SET DB Court division TE[«COUNTER»] TO "«DB Court division TE»"
+	SET DB Court county MC[«COUNTER»] TO "«DB Court county MC»"
+	SET DB Court street address TE[«COUNTER»] TO "«DB Court street address TE»"
+	SET DB Court city state zip TE[«COUNTER»] TO "«DB Court city state zip TE»"
+«END REPEAT»
+CLEAR Housing court MC
+«REPEAT DB Court list DI»
+«IF DB Court department MC = "Housing Court"»
+ADD "«Court title CO»" TO Housing court MC
+«END IF»
+«END REPEAT»
+
+////////////////////////////////////////////////////////
+
+
+// The  computation below should be placed in the computation "INTERVIEW Conditions CO"
+// INTERVIEW Conditions CO
+IF COUNT( Unlawful conditions repeat DI ) = 0
+	«REPEAT DB Unlawful condition list DI»
+	SET UC Citation repeat TE[«COUNTER»] TO "«DB Unlawful condition citation TE»"
+	SET UC Description repeat TE[«COUNTER»] TO "«DB Unlawful condition description TE»"
+	«END REPEAT»
+END IF
+// END INTERVIEW Conditions CO
+//////////////////////////////////////////////////
