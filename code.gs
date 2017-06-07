@@ -34,6 +34,7 @@ function getHotdocsCourtsComputation(startIndex) {
   var text = "";
   var cr = "<br/>";
   var i = 0;
+  var hcText = "";
 
   var sheet = SpreadsheetApp.getActiveSheet();
   var data = sheet.getDataRange().getValues();
@@ -50,8 +51,11 @@ function getHotdocsCourtsComputation(startIndex) {
     text += 'SET SET DB Court county MC[' + i +'] TO "'  + data[j][4] + '"' + cr;
     text += 'SET DB Court street address[' + i +'] TO "'  + data[j][5] + '"' + cr;
     text += 'SET DB Court city state zip TE[' + i +'] TO "'  + data[j][6] + '"' + cr;
+    if (data[j][2] == "Housing Court") {
+      hcText += 'ADD "' + data[j][1] + '" TO Housing court MC' + cr;
+    }
   }
-  return text;
+  return text + hcText;
 }
 
 function getHotdocsAttorneysComputation(startIndex) {
