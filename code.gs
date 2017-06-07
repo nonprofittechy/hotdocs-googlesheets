@@ -34,7 +34,7 @@ function getHotdocsCourtsComputation(startIndex) {
   var text = "";
   var cr = "<br/>";
   var i = 0;
-  var hcText = "";
+  var hcText = "CLEAR Housing court MC" + cr;
 
   var sheet = SpreadsheetApp.getActiveSheet();
   var data = sheet.getDataRange().getValues();
