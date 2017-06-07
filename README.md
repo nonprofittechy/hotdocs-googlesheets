@@ -11,5 +11,4 @@ Here's the basic workflow:
 I used a HotDocs text template to convert the existing overlay answer file into a CSV file that could be imported into Google Sheets.
 
 ## What's included in this example
-This repository has the Google Apps Script file and the HTML "sidebar". It also has a sample of the CSV text template, which is pretty
-straightforward.
+This repository has the Google Apps Script file and the HTML "sidebar". It also has a sample of the CSV text template I used to get data out of the existing overlay answer file.
