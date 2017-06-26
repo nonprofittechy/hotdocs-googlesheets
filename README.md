@@ -12,3 +12,7 @@ I used a HotDocs text template to convert the existing overlay answer file into 
 
 ## What's included in this example
 This repository has the Google Apps Script file and the HTML "sidebar". It also has a sample of the CSV text template I used to get data out of the existing overlay answer file.
+
+## Read More
+
+http://nonprofittechy.com/2017/06/07/google-forms-workflow-to-replace-hotdocs-overlay-answer-files/
